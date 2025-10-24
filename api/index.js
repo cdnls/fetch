@@ -27,8 +27,8 @@ module.exports = async (req, res) => {
 
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'text/html');
-    res.send(minified);
+    return res.send(minified);
   } catch (err) {
-    res.status(500).send(`<pre>${err.toString()}</pre>`);
+    return res.status(500).send(`<pre>${err.toString()}</pre>`);
   }
 };
